@@ -20,12 +20,12 @@ const router = createBrowserRouter([
   {
     path: '/notes',
     element: <Allnotes></Allnotes>,
-    loader: () => fetch('http://localhost:5000/notes')
+    loader: () => fetch('https://notekhata-server.onrender.com/notes')
   },
   {
     path: '/notes/:id',
     element: <Viewnote></Viewnote>,
-    loader: ({ params }) => fetch(`http://localhost:5000/notes/${params.id}`)
+    loader: ({ params }) => fetch(`https://notekhata-server.onrender.com/notes/${params.id}`)
   }
 ]);
 

@@ -9,7 +9,7 @@ const Keepnotes = () => {
 
     const editorRef = useRef(null);
     const quillRef = useRef(null);
-    const initializedRef = useRef(false); 
+    const initializedRef = useRef(false);
 
     useEffect(() => {
         if (!initializedRef.current) {
@@ -37,12 +37,12 @@ const Keepnotes = () => {
                 theme: 'snow'
             });
 
-            initializedRef.current = true; 
+            initializedRef.current = true;
         }
 
         return () => {
             if (quillRef.current) {
-                quillRef.current = null; 
+                quillRef.current = null;
             }
         };
     }, []);
@@ -64,10 +64,10 @@ const Keepnotes = () => {
         console.log(formData)
         reset();
 
-        fetch('http://localhost:5000/notes', {
+        fetch('https://notekhata-server.onrender.com/notes', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(formData)
         })
@@ -83,10 +83,10 @@ const Keepnotes = () => {
                     });
                 }
             })
-        
+
 
     }
-    
+
     return (
         <div className="md:w-10/12">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">

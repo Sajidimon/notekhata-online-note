@@ -22,7 +22,7 @@ const Allnotes = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/notes/${id}`)
+                axios.delete(`https://notekhata-server.onrender.com/notes/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -43,7 +43,7 @@ const Allnotes = () => {
 
     return (
         <>
-            
+
             <div className="text-sm breadcrumbs ml-4">
                 <ul>
                     <li><a><Link to='/'>Home</Link></a></li>
